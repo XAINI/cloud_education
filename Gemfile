@@ -51,3 +51,5 @@ gem 'haml'
 gem 'simple_form'
 
 gem 'mongoid', '~> 4.0'
+
+gem 'bootstrap-sass', '~> 3.3.5'

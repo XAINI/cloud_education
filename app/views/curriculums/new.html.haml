@@ -1,18 +1,16 @@
 .curriculum
+  %ul.nav.nav-pills
+    %li.active
+      %a{role: "presentation", href: "/curriculums"}
+        %span
+          Curriculum
+.curriculum
   = simple_form_for @curriculums do |t|
-    .field
-      %label
-      = t.input :name
-    .filed
-      %label
-        Content:
-      = t.text_area :content
-    .field
-      %label
-        Path:
-      = t.file_field :path
-    .field
-      = t.button :submit
+    
+    = t.input :name
 
-.curriculum-link
-  = link_to "Curriculum", "/curriculums"
+    = t.input :content, as: :text
+
+    = t.file_field :path
+
+    = t.button :submit

@@ -1,10 +1,33 @@
 .user
   = link_to "Home","/home"
 .user
-  - @users.each do |u|
-    %ul
-      %li
-        = u.name
-        = link_to "Delete","/users/#{u.id}", method: :delete
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Password
+        %th Operate
+    %tbody
+      -@users.each do |u|
+        %tr
+          %td
+            = u.name
+          %td
+            = u.password
+          %td
+            = link_to "Delete","/users/#{u.id}", method: :delete
+
+
+
+
+
+
+
+
+  / - @users.each do |u|
+  /   %ul
+  /     %li
+  /       = u.name
+  /       = link_to "Delete","/users/#{u.id}", method: :delete
 .link= link_to "New User","/users/new"
 .likn= link_to "Sign In", "/users/sign_in"
