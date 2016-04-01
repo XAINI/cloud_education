@@ -1,0 +1,18 @@
+.curriculum
+  = simple_form_for @curriculums do |t|
+    .field
+      %label
+      = t.input :name
+    .filed
+      %label
+        Content:
+      = t.text_area :content
+    .field
+      %label
+        Path:
+      = t.file_field :path
+    .field
+      = t.button :submit
+
+.curriculum-link
+  = link_to "Curriculum", "/curriculums"

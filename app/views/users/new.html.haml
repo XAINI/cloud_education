@@ -1,0 +1,9 @@
+.user
+  = simple_form_for @users do |u|
+    .field
+      = u.input :name
+    .field
+      = u.input :password
+    .field
+      = u.button :submit
+.link= link_to "Home", "/home"

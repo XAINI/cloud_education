@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,3 +45,9 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'haml'
+
+gem 'simple_form'
+
+gem 'mongoid', '~> 4.0'

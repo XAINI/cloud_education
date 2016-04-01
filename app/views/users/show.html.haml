@@ -1,0 +1,9 @@
+.user
+  = simple_form_for @users, url: '/users/sign_in' do |u|
+    .field 
+      = u.input :name
+    .field
+      = u.input :password
+    .field
+      = u.button :submit, "Sign In"
+.link= link_to "Register", "/users/new"

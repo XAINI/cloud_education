@@ -1,0 +1,14 @@
+.curriculum
+  =link_to "Home", "/home"
+.curriculum
+  %ul
+    -@curriculums.each do |culm|
+      %li
+        = culm.name
+        = culm.path
+        = culm.content
+        = link_to "Edit", "/curriculums/#{culm.id}/edit"
+        = link_to "Show", "/curriculums/#{culm.id}"
+        = link_to "Destroy", "/curriculums/#{culm.id}", method: :delete
+.link= link_to "New Curriculum", "/curriculums/new"
+.link= link_to "User", "/users"
