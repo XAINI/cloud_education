@@ -10,9 +10,6 @@ Rails.application.routes.draw do
       post :sign_in, on: :collection
     end
 
-
-
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

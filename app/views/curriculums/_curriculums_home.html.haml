@@ -1,0 +1,17 @@
+%tr
+  %td
+    = c.name
+  %td
+    = c.path
+  %td
+    = c.content
+  %td
+    %a.btn.btn-default{ href: "/curriculums/#{c.id}/edit", data: {confirm: "Are you sure you want to delete this record?", method: :delete} }
+      %i.glyphicon.glyphicon-edit
+      %span Edit
+    %a.btn.btn-default{ href: "/curriculums/#{c.id}"}
+      %i.glyphicon.glyphicon-list-alt
+      %span Show
+    %a.btn.btn-default{ href: "/curriculums/#{c.id}", data: {confirm: "Are you sure you want to delete this record?", method: :delete} }
+      %i.glyphicon.glyphicon-trash 
+      %span Destroy
