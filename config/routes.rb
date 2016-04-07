@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
     resources :home
-    resources :curriculums
+    resources :curriculums do
+      get :fetch_curriculums, on: :collection
+    end
     resources :users do
       post :sign_in, on: :collection
     end

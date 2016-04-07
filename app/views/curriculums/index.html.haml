@@ -21,5 +21,21 @@
         %th Content
         %th Operate
     %tbody
-      -@curriculums.each do |c|
-        = render :partial => "curriculums_home",locals: { curriculum: c }
+      -@curriculums.each do |curriculum|
+        %tr
+          %td
+            = curriculum.name
+          %td
+            = curriculum.path
+          %td
+            = curriculum.content
+          %td
+            %a.btn.btn-default{ href: "/curriculums/#{curriculum.id}/edit", data: {confirm: "Are you sure you want to delete this record?", method: :delete} }
+              %i.glyphicon.glyphicon-edit
+              %span Edit
+            %a.btn.btn-default{ href: "/curriculums/#{curriculum.id}"}
+              %i.glyphicon.glyphicon-list-alt
+              %span Show
+            %a.btn.btn-default{ href: "/curriculums/#{curriculum.id}", data: {confirm: "Are you sure you want to delete this record?", method: :delete} }
+              %i.glyphicon.glyphicon-trash 
+              %span Destroy

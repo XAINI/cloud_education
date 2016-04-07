@@ -1,11 +1,11 @@
 class CurriculumsController <  ApplicationController
     def index
       @curriculums = Curriculum.all.to_a
-      form_html = render_to_string :partial => 'curriculums_home',locals: { curriculum: @curriculums } 
-        render :json => {
-          :status => 200,
-          :body => form_html
-        }
+    end
+
+    def fetch_curriculums
+      @curriculums = Curriculum.all.to_a
+      render :json => @curriculums
     end
 
     def new
