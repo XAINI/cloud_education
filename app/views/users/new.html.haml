@@ -1,4 +1,19 @@
 .user
+  %ul.nav.nav-pills
+    %li
+      %a{role: "presentation", href: "/home"}
+        %span
+          Home
+    %li
+      %a{role: "presentation", href: "/curriculums/new"}
+        %span
+          New Curriculum
+    %li
+      %a{role: "presentation", href: "/users"}
+        %span
+          User
+
+.user
   = simple_form_for @users do |u|
     .field
       = u.input :name
@@ -6,4 +21,3 @@
       = u.input :password
     .field
       = u.button :submit
-.link= link_to "Home", "/home"

@@ -3,30 +3,3 @@
         云教育课程录入平台
 .curriculum-link
     = link_to "Curriculum", "/curriculums"
-/ .home-content
-/     %table
-/         %tr
-/             %td
-/                 课程标题：
-/             %td
-/                 = input
-/         %tr
-/             %td
-/                 描述：
-/             %td
-/                 =text_area
-/         %tr
-/             %td
-/                 文件上传：
-/             %td
-/                 = field 'message', 'details'
-/ .total
-/      = simple_form_for [@company, @team] do |t|
-/         .field
-/           = t.input :team_name
-/         .filed
-/           = t.association :employees, label_method: :employee_name, as: :check_boxes
-/         .field
-/           = t.association :company, as: :hidden
-/         .field
-/           = t.button :submit
