@@ -19,9 +19,16 @@ class UsersController < ApplicationController
 
   # Android 端注册
   def sign_up_from_android
-    @user = User.create(:name => params[:user][":name"], :password => params[:user][":password"])
-    if @user.save
-      render :json => "Successfully"
+    @name = params[:user][":name"]
+    @password = params[:user][":password"]
+    
+    if @name.blank? || @password.blank?
+      render :json => "用户名和密码不能为空"
+    else
+      @user = User.create(:name => @name, :password => @password)
+      if @user.save
+        render :json => "Successfully"
+      end
     end
   end
 
