@@ -3,6 +3,7 @@ class CurriculumsController <  ApplicationController
       @curriculums = Curriculum.all.to_a
     end
 
+    # Android 端获取课程信息
     def fetch_curriculums
       @curriculums = Curriculum.all.to_a
       render :json => @curriculums

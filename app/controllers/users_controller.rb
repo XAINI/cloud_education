@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     @users = User.all
   end
@@ -16,6 +17,21 @@ class UsersController < ApplicationController
     end
   end
 
+  # Android 端注册
+  def sign_up_from_android
+    @user = User.create(:name => params[:user][":name"], :password => params[:user][":password"])
+    if @user.save
+      render :json => "Successfully"
+    end
+  end
+
+  # Android 端获取用户信息
+  def fetch_users_info
+    @users = User.all.to_a
+    render :json => @users
+  end
+
+  # rails 端登陆
   def sign_in
     @users = User.all.to_a
     if @users.map{ |item| item.name == params[:user][:name] && item.password == params[:user][:password] }.include?(true)
@@ -23,8 +39,6 @@ class UsersController < ApplicationController
     else 
       redirect_to "/users/new"
     end
-
-
   end
 
   def show
