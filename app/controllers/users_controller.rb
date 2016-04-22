@@ -21,13 +21,17 @@ class UsersController < ApplicationController
   def sign_up_from_android
     @name = params[:user][":name"]
     @password = params[:user][":password"]
-    
+    @users = User.all.to_a
     if @name.blank? || @password.blank?
       render :json => "用户名和密码不能为空"
     else
-      @user = User.create(:name => @name, :password => @password)
-      if @user.save
-        render :json => "Successfully"
+      if @users.map{ |item| item.name == @name }.include?(true)
+        render :json => "用户已存在"
+      else
+        @user = User.create(:name => @name, :password => @password)
+        if @user.save
+          render :json => "Successfully"
+        end
       end
     end
   end

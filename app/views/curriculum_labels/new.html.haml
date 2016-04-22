@@ -1,0 +1,23 @@
+.curriculum-label  
+  %ul.nav.nav-pills
+    %li
+      %a{role: "presentation", href: "/curriculum_labels"}
+        %span
+          back
+.curriculum-label
+  =simple_form_for @labels do |cl|
+    .field
+      = cl.input :label
+    .field
+      = cl.input :catalogue
+    .field
+      =cl.button :submit
+
+/ .label
+/   = simple_form_for @labels do |la|
+/     .field
+/       = la.input :label
+/     .field
+/       = la.input :catalogue
+/     .field
+/       = la.button :submit

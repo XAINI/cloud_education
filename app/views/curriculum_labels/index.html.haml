@@ -1,0 +1,32 @@
+.curriculum-label  
+  %ul.nav.nav-pills
+    %li
+      %a{role: "presentation", href: "/home"}
+        %span
+          Home
+    %li
+      %a{role: "presentation", href: "/curriculums"}
+        %span
+          Curriculum
+    %li
+      %a{role: "presentation", href: "/users"}
+        %span
+          User
+.curriculum-label
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Label
+        %th Catalogue
+        %th Operate
+    %tbody
+      - @labels.each do |cl|
+        %tr
+          %td
+            = cl.label
+          %td 
+            = cl.catalogue
+          %td 
+            = link_to "Delete", "/curriculum_labels/#{cl.id}", method: :delete
+.curriculum-label
+  = link_to "New Curriculum Label", "/curriculum_labels/new"

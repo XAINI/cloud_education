@@ -1,5 +1,17 @@
 .user
-  = link_to "Home","/home"
+  %ul.nav.nav-pills
+    %li
+      %a{role: "presentation", href: "/home"}
+        %span
+          Home
+    %li
+      %a{role: "presentation", href: "/curriculums"}
+        %span
+          Curriculum
+    %li
+      %a{role: "presentation", href: "/curriculum_labels"}
+        %span
+          Curriculum Label
 .user
   %table.table.table-striped
     %thead
